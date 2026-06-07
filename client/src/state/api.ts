@@ -10,6 +10,13 @@ export const api = createApi({
             if(token){
                 headers.set('Authorization', `Bearer ${token}`);
             }
+
+            // --- EZ HIÁNYZOTT: A NEPTUN KÓD ELKÜLDÉSE ---
+            const neptunCode = import.meta.env.VITE_NEPTUN_CODE;
+            if (neptunCode) {
+                headers.set('X-Neptun-Code', neptunCode);
+            }
+
             return headers;
         },
     }),
