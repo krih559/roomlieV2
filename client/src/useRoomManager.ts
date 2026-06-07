@@ -19,20 +19,19 @@ export function useRoomManager(initialTables: TableData[]){
   };
 
   const handleAddTable = async (newTable: TableData) => {
-    try{
-      const backendPayload: Record<string, string | number | boolean> = {
+    try {
+      const backendPayload = {
         name: `${newTable.type} asztal`,
         type: newTable.type,
         category: newTable.category,
         color: newTable.color,
         status: newTable.status,
-        x: newTable.position.x,
-        y: newTable.position.y,
+        position: { x: newTable.position.x, y: newTable.position.y }, // <-- ITT A LÉNYEG
         isLocked: newTable.isLocked
       };
 
       await createTable(backendPayload).unwrap();
-    } catch (error: unknown) {
+    } catch (error: unknown) { 
       console.error("Részletes hiba asztal hozzáadásakor: ", error);
       const err = error as { data?: unknown };
       alert("SZERVER HIBA AZ ASZTAL LETÉTELEKOR!\n\n" + JSON.stringify(err?.data || error, null, 2));

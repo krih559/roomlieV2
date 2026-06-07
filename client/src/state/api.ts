@@ -11,7 +11,6 @@ export const api = createApi({
                 headers.set('Authorization', `Bearer ${token}`);
             }
 
-            // --- EZ HIÁNYZOTT: A NEPTUN KÓD ELKÜLDÉSE ---
             const neptunCode = import.meta.env.VITE_NEPTUN_CODE;
             if (neptunCode) {
                 headers.set('X-Neptun-Code', neptunCode);
@@ -81,7 +80,7 @@ export const api = createApi({
             invalidatesTags: ['Tables']
         }),
         createTable: builder.mutation({
-            query: (tableData: Record<string, string | number | boolean>) => ({
+            query: (tableData: Record<string, any>) => ({
                 url: `/api/v1/tables`,
                 method: 'POST',
                 body: tableData
