@@ -9,8 +9,7 @@ import type { RootState } from '../state/store';
 
 export function RoomPage() {
   const user = useSelector((state: RootState) => state.auth.user);
-  const {data: tableData, isLoading, isError} = useGetTablesQuery();
-
+  const {data: tableData, isLoading, isError} = useGetTablesQuery(undefined);
   const {
     tables,
     initializeTables,

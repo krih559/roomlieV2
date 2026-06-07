@@ -6,7 +6,7 @@
     "color": "red",
     "status": 3,
     "position": { "x": 50, "y": 50 },
-    "is-locked": false
+    "isLocked": false
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "color": "blue",
     "status": 5,
     "position": { "x": 300, "y": 90 },
-    "is-locked": false
+    "isLocked": false
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "color": "green",
     "status": 7,
     "position": { "x": 100, "y": 250 },
-    "is-locked": true
+    "isLocked": true
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "color": "green",
     "status": 9,
     "position": { "x": 450, "y": 300 },
-    "is-locked": false
+    "isLocked": false
   }
 ]
