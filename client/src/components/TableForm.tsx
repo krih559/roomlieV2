@@ -23,16 +23,17 @@ export function TableForm({onAdd}: TableFormProps){
             isLocked: false
         };
 
-        onAdd(newTable);
+        onAdd(newTable as TableData); // <-- Típus kényszerítés a Vercel kedvéért
 
         setType('foosball');
         setCategory('normal');
+        setColor('blue'); // <-- Szín visszaállítása alaphelyzetbe
         setStatus(10);
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2 style={{ color: 'black' }} >Új asztal</h2>
+            <h2>Új asztal</h2> {/* <-- Kivettük a fix fekete színt! */}
 
             <div className="detail-view">
                 <div className="detail-item">
@@ -86,5 +87,4 @@ export function TableForm({onAdd}: TableFormProps){
             </div>
         </form>
     )
-
 }
