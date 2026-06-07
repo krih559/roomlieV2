@@ -23,7 +23,7 @@ export function createApp() {
         return allowed.includes(origin) ? origin : allowed[0];
       },
       allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-      allowHeaders: ["Content-Type", "Authorization"],
+      allowHeaders: ["Content-Type", "Authorization", "X-Neptun-Code"],
       credentials: true,
     }),
   );
